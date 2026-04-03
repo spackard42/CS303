@@ -2,7 +2,7 @@ public class SingleLinkedList<T> {
     private Node head;
     private Node tail;
     private int size;
-
+//source for private node https://stackoverflow.com/questions/450807/how-do-i-make-the-method-return-type-generic
     private static class Node<T>{
         T data;
         Node<T> next;
@@ -14,9 +14,6 @@ public class SingleLinkedList<T> {
             this.next = null;
             this.data=data;
         }
-        public T data(){
-            return data;
-        }
         public void setNext(Node n){
             next = n;
         }
@@ -24,7 +21,7 @@ public class SingleLinkedList<T> {
             return next;
         }
         public T getData(){
-            return data;
+            return (T)data;
         }
     }
     SingleLinkedList(){
@@ -33,6 +30,8 @@ public class SingleLinkedList<T> {
     }
     public void addFirst(T item){
         Node add = new Node(item); 
+        add.setNext(head);
+        head = add; 
     }
     public void addLast(T item){
         Node add = new Node(item);
@@ -43,17 +42,17 @@ public class SingleLinkedList<T> {
         Node temp = head;
         //head = head.getTail
         head = head.getNext();
-        return temp.data;
+        return temp.getData();
     }
     public T removeLast(){
         Node temp = tail;
         for (int i = 0; i < size-1; i++)
             temp = temp.next;
         tail = temp;
-        return temp.getData();
+        return (T)temp.getData();
     }
     public T getFirst(){
-        return head.getData();
+        return (T)head.getData();
     }
 
     public T getLast(){

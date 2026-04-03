@@ -7,7 +7,7 @@ public class StackArray {
     //default constructor
     public StackArray(){
         arr = new ArrayList<>();
-        top = 0;
+        top = -1;
     }
     public StackArray(int size){
         arr = new ArrayList<>(size);
@@ -27,33 +27,32 @@ public class StackArray {
 
 
     public void push(int add){
-        top++;
-        arr.add(top, add);
+        arr.add(++top, add);
+        //top++;
         size++;
-    }
+    } 
     public int peek(){
+        if (arr.isEmpty()){
+            throw new NullPointerException("This Stack is empty");
+        }
         return arr.get(top);
     }
     //peek the current 
     public int pop(){
         int out = peek();
-        if (out == 0 && top == 0){
-            throw new NullPointerException("This Stack is empty");
-        }
         arr.remove(top);
         size--;
-        top--;
+        top--;  
         return out;
     }
     
 
     public double average(){
         int sum=0;
-        int i =0;
-        for (; i < size; i++){
+        for (int i =0; i < size; i++){
             sum += arr.get(i);
         }
-        double avg = sum/i;
+        double avg = sum/size;
         return avg;
         
     }
