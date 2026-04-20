@@ -2,6 +2,8 @@
 
 
 # Proof of work
-## 
-add
-remove
+## Part 1
+
+## part 2 
+
+## part 3
