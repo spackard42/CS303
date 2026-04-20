@@ -44,12 +44,13 @@ public class Queue<T> {
         return size;
     }
 
-    public boolean move_to_rear(){
-        try {
-        list.offer(list.poll());
-        return true;
-        }
-        catch(Error e){return false;}
+    public T move_to_rear(){
+        T temp;
+        list.offer(temp = list.poll());
+        return temp;
     }
-
+    public void empty(){
+        list.clear();
+        size = 0;
+    }
 }

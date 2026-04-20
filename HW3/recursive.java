@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class recursive<T> {
     //in: array to search through, index of searching, and search term
     public int lastOccurance(ArrayList<T> arr, int index, T search){
-        if (index < 0 || search.class != arr[0].class){
+        if (index < 0){
             return -1;
         }
         try {
