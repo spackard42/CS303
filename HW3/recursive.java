@@ -8,13 +8,14 @@ public class recursive<T> {
             return -1;
         }
         try {
-            if (search == arr[index]){
+            if (search.equals( arr.get(index))){
                 return index;
             }
+            lastOccurance(arr, index -1, search);
         }
         catch(Error e){
-            throw new Error("Error: search item is not stored by provided ArrayList");
+            throw new Error("Error: search item is not the right datatype for ArrayList " + arr);
         }
-        lastOccurance(arr, index -1, search);
+        return -1; //backup return since VS doesn't understand that it will 
     }
 }

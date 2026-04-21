@@ -30,4 +30,28 @@ public class Main {
         queue.empty();
         System.out.println("Queue size is now " +queue.size);
     }
+    //Q3
+
+    public static void linkedInsertionSort(LinkedList<Integer> list){
+        int i, j, key;
+        boolean insertionNeeded = false;
+        for (j = 1; j < list.size(); j++){
+            key = list.get(j);
+            insertionNeeded = false;
+            for (i = j - 1; i >= 0; i--){
+                int temp = list.get(i);
+                if (key < list.get(i)){
+                    list.set(i+1,list.get(i)); 
+                    // larger values move right
+                    insertionNeeded = true;
+                }
+                else{
+                    break;
+                }
+            }
+        if (insertionNeeded) {
+            list.set(i+1, key); // put key into its properlocation
+            }
+        }
+    }
 }

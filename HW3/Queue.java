@@ -53,4 +53,6 @@ public class Queue<T> {
         list.clear();
         size = 0;
     }
+    //Q3
+    
 }
