@@ -1,6 +1,4 @@
-package HW3;
 import java.util.ArrayList;
-
 public class recursive<T> {
     //in: array to search through, index of searching, and search term
     public int lastOccurance(ArrayList<T> arr, int index, T search){

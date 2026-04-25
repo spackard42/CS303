@@ -1,5 +1,4 @@
-package HW3;
-import java.util.*;
+import java.util.LinkedList;
 public class Main {
     public static void main(String[] args){
         QueueProof();
@@ -31,7 +30,7 @@ public class Main {
         System.out.println("Queue size is now " +queue.size);
     }
     //Q3
-
+    //standard insertion sort using a LinkedList
     public static void linkedInsertionSort(LinkedList<Integer> list){
         int i, j, key;
         boolean insertionNeeded = false;
